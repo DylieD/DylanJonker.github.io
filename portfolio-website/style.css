@@ -1,0 +1,170 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #19141d;
+}
+
+.canvas {
+    position: fixed; /* Fixed position to cover the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place behind other content */
+}
+
+@keyframes move {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(-50px, 50px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.shape {
+    position: absolute;
+    width: 200px; /* Adjust size */
+    height: 200px;
+    background: rgba(66, 104, 147, 0.5); /* Adjust color */
+    border-radius: 50%;
+    animation: move 5s infinite ease-in-out; /* Animation effect */
+}
+
+/* Add multiple shapes with different animations */
+.shape:nth-child(1) {
+    top: 20%; /* Position in viewport */
+    left: 10%;
+    animation-delay: 0s; /* Start immediately */
+}
+
+.shape:nth-child(2) {
+    top: 50%;
+    left: 40%;
+    animation-delay: 1s; /* Stagger animation */
+}
+
+.shape:nth-child(3) {
+    top: 70%;
+    left: 70%;
+    animation-delay: 2s; /* Stagger animation */
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav {
+    position: fixed; /* Fixes the navigation pane */
+    top: 0; /* Position at the top of the viewport */
+    left: 0;
+    width: 100%; /* Full width */
+    background-color: rgba(51, 51, 51, 0.9); /* Slightly transparent dark backgroud */
+    z-index: 1000; /* Keep it above other elements */
+    text-align: center; /* Center the text in the nav */
+}
+
+nav ul {
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: center; /* Center items */
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+nav ul li {
+    margin: 0 15px; /* Adjust spacing between items */
+    padding: 10px; /* Add padding for better clickability */
+}
+
+nav ul li a {
+    color: white; /* Text color */
+    text-decoration: none; /* Remove underline */
+}
+
+nav ul li.active a {
+    color: #ffcc00; /* Highlight color for active link */
+    font-weight: bold; /* Make it bold */
+}
+
+#work-experience {
+    padding: 20px;
+}
+
+.experience{
+    background-color: transparent; /* Slightly transparent background */
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px 0;
+}
+
+.job-title {
+    color: #ffffff;
+    font-weight: bold; /* White Text */
+    font-size: 1.2em; /* Slightly larger font size */
+}
+
+.company-name {
+    color: #cccccc; /*  Light gray color for company name */
+    font-size: 1em;
+}
+
+.duration {
+    color: #aaaaaa; /* Lighter gray for the duration */
+    font-size: 0.9em;
+}
+
+.description {
+    color: #ffffff; /* White text for consistency */
+    margin-top: 10px; /* Space between durantion and description */
+    font-size: 0.9em; /* Standard font size */
+}
+
+#skills {
+    padding: 20px;
+}
+
+.skills, .certifications {
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px 0;
+}
+
+.skills h3, .certifications h3{
+    color: #ffffff; /* White color for section heading */
+}
+
+.skills ul, .certifications ul {
+    list-style-type: disc; /* Use disc for bullets */
+    padding-left: 20px; /* Indent the list */
+}
+
+.skills li, .certifications li {
+    color: #ffffff; /* White text for list items */
+}
+
+section {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: transparent; /* Make the background transparent */
+}
+
+section h2, section p, section ul li {
+    color: white; /* Ensure all headings, paragraphs, and list items in sections are white */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* Add shadow for better contrast */
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333; /* Keep footer background */
+    color: white;
+}

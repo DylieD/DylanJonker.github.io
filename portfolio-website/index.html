@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+    <meta charset="UTF-8"> <!-- Character encoding-->
+    <meta name="viewport" content="width=device-width, inital-scale=1.0"><!-- Responsive design -->
+    <link rel="stylesheet" href="style.css"> <!-- Link to CSS file -->
+    <title>Dylan Jonker's Portfolio</title> <!-- Title of webpage-->
+</head>
+<body>
+    <div class="canvas">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <!--Add more shapes as needed-->
+    </div>
+    <header>
+        <h1>Dylan Jonker</h1>
+        <p>Welcome to my portfolio!</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#work-experience">Work Experience</a></li>
+            <li><a href="#skills">Skills & Certifications</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I absolutely love numbers and working with them, I prefer working with numbers than having many social interactions. In my free time I like to go rock climbing and some MMA. I love spending time with the people around me, stuff like hiking, cycling or going to the motocross tracks</p>
+        </section>
+
+        <section id="work-experience">
+            <h2>Work Experience</h2>
+            <div class="experience">
+                <div class="job-title">Junior Database Administrator</div>
+                <div class="company-name">SaltTech</div>
+                <div class="duration">Jul 2024 - Present</div>
+                <div class="description">As a Junior DBA, I assist in the management and maintenance of our on-premises database systems. I work closely with senior DBAs and other IT staff to ensure database performance, security, and availability. This role provides me with an excellent opportunity to learn and grow in the field of database administration.</div>
+            </div>
+            <div class="experience">
+                <div class="job-title">Draughtsman</div>
+                <div class="company-name">Final Words</div>
+                <div class="duration">Apr 2023 - Jul 2024</div>
+                <div class="description">As a Draughtsman, I was responsible for creating detailed technical drawings and designs for caskets and related products. I collaborated closely with the production team to ensure that iur designs meet both aesthetic and functional requirements. The role allowed me to express my creativity while contributing to meaningful products.</div>
+            </div>
+            <div class="experience">
+                <div class="job-title">Junior Data Engineer/ Data Engineer Assistant</div>
+                <div class="company-name">BUI</div>
+                <div class="duration">Oct 2021 - Apr 2023</div>
+                <div class="description">I played a pivotal role in the design and implementation of scalable data archtitectures, collaborated with cross-functional teams to extract, transform, and load (ETL) data for business intelligence purposes</div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills & Certifications</h2>
+            <div class="skills">
+                <h3>Skills</h3>
+                <ul>
+                    <li>SQL</li>
+                    <li>Python</li>
+                    <li>Azure</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <!-- Add more skills as needed-->
+                </ul>
+            </div>
+            <div class="certifications">
+                <h3>Certifications</h3>
+                <ul>
+                    <li>AZ-900: Microsoft Azure Fundamentals</li>
+                    <li>AZ-300: Microsoft Azure Database Administrator Associate</li>
+                    <!-- Add more certifications as needed-->
+                </ul>
+            </div>
+           
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <ul>
+                <li><a href="https://github.com/DylieD/project1">Project 1</a> - Brief description</li>
+                <li><a href="https://github.com/DylieD/project2">Project 2</a> - Brief description</li>
+            </ul>
+        </section>
+
+
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>You can reach me at <a href="dylanjonker723@gmail.com">dylanjonker723@gmail.com</a></p>
+            <p>Connect with me on LinkedIn: <a href="www.linkedin.com/in/dylan-jonker" target="_blank"> Dylan Jonker</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Dylan Jonker. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener("scroll", function (){
+            const sections = document.querySelectorAll("section");
+            const navLinks = document.querySelectorAll("nav ul li");
+
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const sectionId = section.getAttribute("id");
+                const navLink = document.querySelector(`nav ul li a[href="#${sectionId}"]`).parentNode;
+
+                if (rect.top <= window.innerHeight / 4 && rect.bottom >= window.innerHeight / 4) {
+                    navLinks.forEach(link => link.classList.remove("active")); // Remove active class from all
+                    navLink.classList.add("active"); // Add active class to the current section
+                }
+            })
+        })
+    </script>
+</body>
