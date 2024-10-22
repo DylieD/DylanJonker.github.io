@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en"></html>
+<html lang="en">
 <head>
     <meta charset="UTF-8"> <!-- Character encoding-->
-    <meta name="viewport" content="width=device-width, inital-scale=1.0"><!-- Responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Responsive design -->
     <link rel="stylesheet" href="style.css"> <!-- Link to CSS file -->
     <title>Dylan Jonker's Portfolio</title> <!-- Title of webpage-->
 </head>
@@ -46,13 +46,13 @@
                 <div class="job-title">Draughtsman</div>
                 <div class="company-name">Final Words</div>
                 <div class="duration">Apr 2023 - Jul 2024</div>
-                <div class="description">As a Draughtsman, I was responsible for creating detailed technical drawings and designs for caskets and related products. I collaborated closely with the production team to ensure that iur designs meet both aesthetic and functional requirements. The role allowed me to express my creativity while contributing to meaningful products.</div>
+                <div class="description">As a Draughtsman, I was responsible for creating detailed technical drawings and designs for caskets and related products. I collaborated closely with the production team to ensure that our designs meet both aesthetic and functional requirements. The role allowed me to express my creativity while contributing to meaningful products.</div>
             </div>
             <div class="experience">
                 <div class="job-title">Junior Data Engineer/ Data Engineer Assistant</div>
                 <div class="company-name">BUI</div>
                 <div class="duration">Oct 2021 - Apr 2023</div>
-                <div class="description">I played a pivotal role in the design and implementation of scalable data archtitectures, collaborated with cross-functional teams to extract, transform, and load (ETL) data for business intelligence purposes</div>
+                <div class="description">I played a pivotal role in the design and implementation of scalable data architectures, collaborating with cross-functional teams to extract, transform, and load (ETL) data for business intelligence purposes.</div>
             </div>
         </section>
 
@@ -78,7 +78,6 @@
                     <!-- Add more certifications as needed-->
                 </ul>
             </div>
-           
         </section>
 
         <section id="projects">
@@ -88,8 +87,6 @@
                 <li><a href="https://github.com/DylieD/project2">Project 2</a> - Brief description</li>
             </ul>
         </section>
-
-
 
         <section id="contact">
             <h2>Contact</h2>
@@ -101,21 +98,43 @@
     <footer>
         <p>&copy; 2024 Dylan Jonker. All rights reserved.</p>
     </footer>
+
     <script>
-        document.addEventListener("scroll", function (){
-            const sections = document.querySelectorAll("section");
-            const navLinks = document.querySelectorAll("nav ul li");
+        document.addEventListener("scroll", function () {
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav ul li a");
 
-            sections.forEach(section => {
-                const rect = section.getBoundingClientRect();
-                const sectionId = section.getAttribute("id");
-                const navLink = document.querySelector(`nav ul li a[href="#${sectionId}"]`).parentNode;
+    sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        const sectionId = section.getAttribute("id");
 
-                if (rect.top <= window.innerHeight / 4 && rect.bottom >= window.innerHeight / 4) {
-                    navLinks.forEach(link => link.classList.remove("active")); // Remove active class from all
-                    navLink.classList.add("active"); // Add active class to the current section
-                }
-            })
-        })
+        // Check if the section is in the viewport
+        if (rect.top <= window.innerHeight / 4 && rect.bottom >= window.innerHeight / 4) {
+            // Remove active class from all links
+            navLinks.forEach(link => link.classList.remove("active"));
+            // Add active class to the current section link
+            document.querySelector(`nav ul li a[href="#${sectionId}"]`).classList.add("active");
+        }
+    });
+});
+
+// Smooth scrolling for internal links
+document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        // Smooth scroll for larger screens
+        if (window.innerWidth > 768) {
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        } else {
+            // Jump to the section on mobile
+            document.querySelector(this.getAttribute('href')).scrollIntoView();
+        }
+    });
+});
+
     </script>
 </body>
+</html>

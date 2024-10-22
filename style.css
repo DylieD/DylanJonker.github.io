@@ -59,38 +59,42 @@ header {
     color: white;
     padding: 10px 0;
     text-align: center;
+    margin-top: 50px; /* Adjust this value if necessary */
 }
 
 nav {
-    position: fixed; /* Fixes the navigation pane */
-    top: 0; /* Position at the top of the viewport */
-    left: 0;
+    position: fixed; /* Keep the navigation fixed */
+    top: 0; /* Position it at the top */
+    left: 0; /* Align it to the left */
     width: 100%; /* Full width */
-    background-color: rgba(51, 51, 51, 0.9); /* Slightly transparent dark backgroud */
-    z-index: 1000; /* Keep it above other elements */
-    text-align: center; /* Center the text in the nav */
+    background-color: rgba(51, 51, 51, 0.8); /* Background color for nav */
+    z-index: 1000; /* Make sure it's above other content */
+    text-align: center; /* Center the text */
 }
 
-nav ul {
-    display: flex; /* Use flexbox for horizontal layout */
-    justify-content: center; /* Center items */
-    list-style: none; /* Remove default list styles */
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
-}
-
-nav ul li {
-    margin: 0 15px; /* Adjust spacing between items */
-    padding: 10px; /* Add padding for better clickability */
-}
+    nav ul {
+        list-style: none; /* Remove default list styles */
+        padding: 0; /* Remove default padding */
+        margin: 0; /* Remove default margin */
+    }
+    
+    nav ul li {
+        display: inline-block; /* Keep items inline */
+        margin: 0 15px; /* Adjust spacing between items */
+    }
 
 nav ul li a {
     color: white; /* Text color */
     text-decoration: none; /* Remove underline */
+    padding: 10px; /* Some padding for better click area */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transistion for hover and active state */
 }
 
-nav ul li.active a {
-    color: #ffcc00; /* Highlight color for active link */
+nav ul li a:hover,
+nav ul li a.active { /* Change color when hovered or active */
+    background-color: rgba(255, 255, 255, 0.3); /* Transparent white background */
+    color: black; /* Black text color when highlighted */
+    border-radius: 5px; /* Add rounded corners */
     font-weight: bold; /* Make it bold */
 }
 
